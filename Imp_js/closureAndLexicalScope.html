@@ -1,0 +1,83 @@
+<!-- closure and lexical scoping -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure aur Lexical Scope</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+
+    <script>
+
+    // function init() {
+    //     let name = "Mozilla"; 
+    //     function displayName() {
+    //         console.log(name); 
+    //     }
+    //    displayName();
+    // }
+    // init();
+
+    // normal behaviour of function 
+    // best closure example
+    // function outer(){
+    //     // let username = "nitish"
+    //     console.log("OUTER", secret);
+    //     function inner(){
+    //         let secret = "my123"
+    //         console.log("inner", username);
+    //     }
+    //     function innerTwo(){
+    //         console.log("innerTwo", username);
+    //         console.log(secret);
+    //     }
+    //     inner()
+    //     innerTwo()
+
+    // }
+    // outer()
+    // console.log("TOO OUTER", username);
+
+
+    // example: 3
+    // function makeFunc() {
+    //     const name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName;
+    // }
+
+    // const myFunc = makeFunc();
+    // myFunc();
+
+    </script>
+
+    <!-- // real - life example of lexical scope and closure   -->
+    <script>
+        // document.getElementById("orange").onclick = function(){
+        //     document.body.style.backgroundColor = `orange`
+        // }
+        // document.getElementById("green").onclick = function(){
+        //     document.body.style.backgroundColor = `green`
+        // }
+
+        // alternate way for multiple like 50 button case
+        function clickHandler(color){
+            document.body.style.backgroundColor = `${color}`
+
+            return function(){
+                document.body.style.backgroundColor = `${color}`
+            }
+        }
+
+        document.getElementById('orange').onclick = clickHandler("orange")
+        document.getElementById('green').onclick = clickHandler("green")
+
+    </script>
+</html>

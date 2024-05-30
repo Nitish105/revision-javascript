@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Async code</title>
+</head>
+<body>
+    <h1>async in javascript</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+    // one way
+    const sayGreeting = function() {
+        console.log("welcome to the revision of async in javascript");
+    }
+
+    // setTimeout(sayGreeting, 2000)
+
+    
+    // Another way to write 
+    // setTimeout(function(){
+        //     console.log("Nitish");
+        // }, 2000)
+        
+        
+    // change h1 text with the help dom events
+    const changeH1Text = function() {
+        document.querySelector('h1').innerHTML = "best async revision" 
+    }
+
+    const changeSetTimeout = setTimeout(changeH1Text, 5000);
+
+    // clearTimeout(changeSetTimeout)
+
+    document.querySelector('#stop').addEventListener('click', 
+    function() {
+        clearTimeout(changeSetTimeout);
+        console.log("stopped execution");
+    }, 3000)
+
+    </script>
+</html>

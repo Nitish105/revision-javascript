@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Async code</title>
+</head>
+<body>
+    <h1>async in javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    // setInterval
+
+    // one way
+    // setInterval(function(){
+    //     console.log("setInterval -> continuously invoked", Date.now);
+    // }, 1000)
+    
+    // another way
+    const myInterval = function(str){
+        console.log("setInterval -> continuously invoked", Date.now());
+    }
+
+    // setInterval(myInterval, 1000, "Hello")
+
+    // const changeClearInterval = setInterval(myInterval, 1000, "Hello")
+
+    // clearInterval(changeClearInterval)
+
+    //project 1 
+    // print -> start button
+
+    const printText = function() {
+        document.querySelector('#start').addEventListener('click', function() {
+            console.log("Good evening, Nick", Date.now());
+        } )
+    }
+
+    // const stopBtn = setInterval(printText, 2000)
+
+
+    // clearInterval(stopBtn)
+
+
+
+</script>
+</html>

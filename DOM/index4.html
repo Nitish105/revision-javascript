@@ -1,0 +1,63 @@
+<!-- How to edit and remove DOM elements 
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM - Edit and remove element in dom | Revision 4</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="programming">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    // this is general way to define function and create li element 
+    function addProgramming(programName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${programName}`
+        document.querySelector('.programming').appendChild(li)
+    }
+
+    addProgramming("java")
+    addProgramming("typescript")
+    addProgramming("python")
+
+    // this is optimize way way to define function and create li element 
+    function addOptimizeWayProgramming(programName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(programName))
+        document.querySelector('.programming').appendChild(li)
+    }
+
+    addOptimizeWayProgramming('golang')
+
+
+    // Edit element in DOM
+    const secondProgram = document.querySelector("li:nth-child(2)")
+    // console.log(secondProgram);
+    // secondProgram.innerHTML = "Ruby"
+    const newLi = document.createElement('li')
+    newLi.textContent = "Rust"
+    // edit property -> replaceWith()
+    secondProgram.replaceWith(newLi)
+
+    //Edit -> python replace swift
+    const thirdProgram = document.querySelector("li:nth-child(4)")
+    const newLiAgain = document.createElement('li')
+    newLiAgain.textContent = "swift"
+    thirdProgram.replaceWith(newLiAgain)
+
+
+
+    // remove element in DOM
+    // last language remove -> golang 
+    const lastProgram = document.querySelector('li:last-child')
+    lastProgram.remove()
+
+
+
+
+</script>
+</html>
