@@ -35,3 +35,5 @@ const userTwo = new User("Jack", 12, true)
 // console.log(userOne);
 console.log(userOne.constructor);
 // console.log(userTwo);
+
+
